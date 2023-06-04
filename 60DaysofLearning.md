@@ -45,3 +45,23 @@
     - All components of web applications need server to run
 - Server side rendering
     - Interface is rendered in the backend and sent to the client
+
+### Day04
+
+- Communication Between Client and Server
+    - Request-Response Model: Client sends request, server responds with the data
+    - HTTP Protocol:
+        - Entire communication happens over the HTTP protocol
+        - Stateless request-response protocol
+        - REST(Representational State Transfer)
+            - API(software) architectural style
+            - Web services using REST: RESTful web services
+        - REST API
+            - API adhering to REST architectural constraints
+            - HTTP protocol
+            - REST allows caching the response
+            - Stateless process, every connection must have the complete data to make it successful like auth data
+            - Backend and frontend are decoupled: Different frontend can be used for a single backend like for web, ios, android applications
+            - Before REST, web applications were tightly coupled
+            - Acts as a gateway to the system, handles everything and provides access to the resources
+
