@@ -65,3 +65,32 @@
             - Before REST, web applications were tightly coupled
             - Acts as a gateway to the system, handles everything and provides access to the resources
 
+### Day05
+
+- Modes of data transfer between client and server
+    - HTTP Pull
+        - Client sends request and server responds with data
+        - If there is no updated data in the server, it would keep sending requests, causing waste of resources(bandwidth)
+    - HTTP Push
+        - Client requests for first time and server keeps pushing updates to the client
+        - Also called callback
+        - Eg: User Notifications
+        - Technologies for HTTP Push: AJAX Long Polling, Web Sockets, Server-side events, HTML5 Event Source, Message Queues, Streaming over HTTP
+    - HTTP Pull - Polling with AJAX
+        - AJAX: Asynchronous JavaScript And XML
+        - XMLHttpRequest object is used for sending requests to the server which is built-in the browser
+        - Continuously requesting information from the server at regular intervals is called Polling
+    - TTL(Time To Live)
+        - There is TTL for every request
+        - If client does not receive response within TTL, browser kills the connection and client has to resend the request
+        - Open connections consume resources and there is a limit to it
+        - If only new connections are introduced then server will run out of memory, so to solve this we have TTL
+    - Persistent Connections
+        - Enables HTTP Push-based communication
+        - Browser kills open connections every X seconds so, we have Heartbeat Interceptors
+        - Heartbeat Interceptors: Blank request responses between client and server to prevent killing the connection
+        - Resource intensive
+
+### Day06
+
+-
