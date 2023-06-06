@@ -93,4 +93,31 @@
 
 ### Day06
 
--
+- HTTP Push-Based Technologies
+    - Websockets
+        - Runs over TCP not HTTP
+        - Persistent Bidirectional Low Latency Data Flow between client and server
+        - Messaging, Chat Applications, Real-time social streams, browser based massive multiplayer games
+    - AJAX Long Polling
+        - Lies in-between AJAX and Websockets
+        - Server holds the response until it finds an update to be sent to the client
+        - Connection stays open a bit longer than polling
+        - Smaller number of requests than regular polling
+        - Used in simple asynchronous data fetch use cases when we don't want to poll server every now and then
+    - HTML5 Event Source API And Server Side Events
+        - Server automatically pushes the data to the client whenever there is an update available
+        - Incoming messages from server are treated as events
+        - Clients need to establish the initial connection with initial request
+        - In the User Interface(UI), HTML5 Event Source API is used
+        - Eg: Real time feed (in Twitter), displaying stock quotes, real-time notifications
+    - Streaming Over HTTP
+        - Ideal for streaming large data over HTTP
+        - Large data is broken down into smaller chunks
+        - Used for streaming multimedia contents like images, videos
+        - Partially downloaded videos(chunks of the full video) can be played while being downloaded
+        - Client and server agrees on some streaming settings to help figure out when stream begins and ends over HTTP request-response model
+        - Possible with HTML5 and JavaScript Stream API
+
+### Day07
+
+- 
