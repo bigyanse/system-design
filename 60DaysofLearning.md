@@ -120,4 +120,24 @@
 
 ### Day07
 
+- Client-Side Rendering
+    - The response from the server is rendered on the window by the client
+    - Browser has several components to render the response to the window
+        - Browser Engine
+        - Rendering Engine
+        - JavaScript Interpreter
+        - Networking and UI Backend
+        - Data Storage, etc
+    - Rendering Engine constructs the DOM tree, renders and paints the construction
+- Server-Side Rendering
+    - The response from the server directly generates HTML page and sends it to the client
+    - Faster rendering of the UI
+    - Faster loading
+    - Less rendering and assembling time for the UI
+    - More bandwidth
+    - Not so smooth user experience
+    - SEO Friendly
+
+# Day08
+
 - 
