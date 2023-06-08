@@ -140,4 +140,42 @@
 
 # Day08
 
+- Scalability
+    - Ability of the application to  handle and withstand increased worklaoad without sacrificing the latency
+    - Eg: it should take x second to respond to a user request and the same for million concurrent requests
+    - Backend infrastructure should not crash on million concurrent requests and should scale well when subjected to heavy traffic load and should maintain the latency of the sytem
+- Latency
+    - Amount of time a system takes to respond to a user request
+    - No matter how much traffic load is, the latency should not build up
+    - If latency is same for all amount of requests, the application can said to be scaled well
+    - Types
+        - Network latency: time to send a data packet from point A to B, using CDN can reduce network latency
+        - Application latency: time to process user request, running stress and load test to figure out bottlenecks and remove it
+    - Latency determines if the visitor to a website engages or bounces off to another website
+    - We should aim for zero latency even if it is not practically possible
+    - MMO games, algorithmic trading services, fintech companies, needs low latency else there will be consequences like bad user experience, or losses
+    - Huawei and Hibernia Atlantic in 2011 layed fibre optic link across Atlantic Ocean between London and New York to save traders 6 milliseconds of latency for $300M approx
+- Types of Scaling
+    - Vertical Scaling
+        - Scaling up
+        - Adding more power to the server
+        - Simple to scale; It does not require code refactoring and complex configurations
+        - It requires pre-planning and stipulated time to pull off
+        - Availability risk
+        - Eg: RAM upgrade from 16G to 32G
+    - Horizontal Scaling
+        - Scaling out
+        - There is a limit to vertical scaling, so horizontal scaling
+        - Adding more hardware to the existing hardware resource pool
+        - Provides ability to dynamically scale in real-time as the traffic increases or decreases over time
+        - Application needs to be stateless because if one server gets down all data is lost
+        - Persistent memory like a key-value pair
+        - That is why functional programming got popular with distributed systems
+- Cloud Elasticity
+    - Ability to scale up or down dynamically, only pay for the resources required and used
+    - Can add more server nodes if heavy traffic and remove when there is not much
+    - High Availability: if some server gets crashed, other stays online
+
+### Day09
+
 - 
