@@ -138,7 +138,7 @@
     - Not so smooth user experience
     - SEO Friendly
 
-# Day08
+### Day08
 
 - Scalability
     - Ability of the application to  handle and withstand increased worklaoad without sacrificing the latency
@@ -178,4 +178,38 @@
 
 ### Day09
 
-- 
+- Primary Bottlenecks That Hurt Scalability
+    - Databases
+        - If the application is scalable and highly available but if the database is single monolith, then the application will still have latency and low response time
+        - Database also needs to scale well
+        - Can be done with database partitioning, sharding, use multiple database servers
+    - Application Architecture
+        - Common mistake is not using asynchronous processes and modules
+        - Sending confirmation email, notifications to the user must be done asynchronously
+        - Such tasks should be forwarded to messageing server rather than doing it on the server and synchronously
+    - Not using caching wisely
+    - Inefficient configurations and setup of load balancers
+    - Adding business logic to the database: moving from one database to another makes it inefficient
+    - Not picking the right database: use relational if transactions and consistency, if need horizontal scaling use non relational
+    - Bottlenecks at the code level
+        - Unnecessary loop, too many nested loops
+        - tightly coupled code
+        - not paying attention to Big-O complexity
+- Improve Scalability
+    - Improving performance
+        - Application scalablity is directly proportional to its performance
+        - Profiling
+            - Dynamic analysis of the code to measure the space and time complexity, to figure out issues like concurrency errors, memory errors
+            - Profile each aspect of the application, find the bottlenecks and fix it
+        - Cachine
+        - CDN
+        - Data Compression
+        - Avoid unnecessary client-server requests
+    - Testing scalability of the application
+        - Testing can be done on hardware or software level
+        - Different parameters such as CPU usage, network bandwidth consumption, throughput, no of requests processed within a stipulated time, latency, memory usage of the program, end user experience when system is under heavy load, are taken into account
+        - Simulated traffic can be routed to the sustem to study how the ssystem will behave under heavy load and plan for contingencies
+        - JMeter is used to run concurrent user test
+        - Sports website should prepare for sports event day, ecommerce for festival season,etc
+        - Cadvisor, Prometheus, Grafana are use to track the system via web based dashboards
+        - Pre-production monitoring tools
