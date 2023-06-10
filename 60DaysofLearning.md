@@ -213,3 +213,29 @@
         - Sports website should prepare for sports event day, ecommerce for festival season,etc
         - Cadvisor, Prometheus, Grafana are use to track the system via web based dashboards
         - Pre-production monitoring tools
+
+### Day10
+
+- High Availabiity
+    - Ability of the system to stay online despite failures at the infrastructure level
+    - Mission critical systems like aircraft systems, spacecrafts, mining machines, hospital servers, finance stock market systems rely on high availability so do our lives
+    - Highly available systems are fault-tolerant and redundant
+- Reasons for System Failures
+    - Software Crashes
+    - Hardware Failures
+    - Human Errors
+    - Planned Downtime: Updates, Maintenance operations, Software Patches, Hardware Upgrades
+- Fault Tolerance
+    - Ability of the system to stay up depite taking hits and one of the way to achieve high availability
+    - At application HA can be achieved by architecturally breaking into loosely coupled smaller services called microservices
+    - Benefits of microservices
+        - Easier management and development
+        - Ease of adding new features and maintenance
+        - High availability
+- Redundancy
+    - Duplicating components or instances to keep them on standby to take over in case the active ones go down
+    - Active Passive HA mode: active sets of nodes are replaced by passive nodes on standby in case of failures
+    - Getting rid of single point of failure
+        - Distributed systems over Monolithic architecture
+        - Getting rid of Bottlnecks in application level
+    - System should be monitored in real-time to detect single point of failures
