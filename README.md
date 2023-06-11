@@ -1,5 +1,7 @@
 # system-design
 
+All my resources, roadmap, learnings, etc for system design.
+
 # Contents
 
 - Basics

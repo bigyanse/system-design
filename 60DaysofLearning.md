@@ -239,3 +239,32 @@
         - Distributed systems over Monolithic architecture
         - Getting rid of Bottlnecks in application level
     - System should be monitored in real-time to detect single point of failures
+
+### Day11
+
+- Replication
+    - Having no of similar nodes running the workload together so that if few goes doqwn, there are remaining nodes bear the load of the service (like load balancing)
+    - Also known as active-active high availability mode, all components are active all the time
+    - Geographical Distribution Of Workload
+- High Availability Clustering
+    - Also known as the Fail-over cluster
+    - Nodes in the cluster are connected by a private network called Heartbeat Network, that monitors the health and status of each node in the cluster
+    - Single state is maintained across all the nodes with the help of a shared distributed memory and a distributed co-ordination service like the Zookeeper
+    - To ensure the availability, HA clusters use several techniques such Disk mirroring/RAID Redundant Array of Independent Disks, redundant network connections, redundant electrical power, etcin multiple geographical zone
+    - The network connections are made redundant so if the primary network goes down, the backup network takes over
+    - Multiple HA clusters run together in one geographical zone ensuring minimum downtime and continual service
+- Monolithic Architecture
+    - Self contained, single-tiered software application that contains the entire application code in a single codebase
+    - Simple to build, test, deploy in comparison to microservice architecture
+    - Moving from monolithic to microservice has its own cost, so if there is a plan to scale in the future, loosely coupled stateless microservices architecture should be used right from the start, as rewriting can be costly
+    - Pros
+        - Simplicity
+    - Cons
+        - Continuous Deployment
+        - Regression Testing
+        - Single Points of Failure
+        - Scalability Issues
+        - Cannot Leverage Heterogeneous Technologies
+        - Not Cloud Ready, Hold State
+    - Only choose monolithic architecture if requirements are simple
+    - Can scale out to a distributed microservices architecture if the requirements change, or is the need of scaling
