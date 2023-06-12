@@ -268,3 +268,23 @@
         - Not Cloud Ready, Hold State
     - Only choose monolithic architecture if requirements are simple
     - Can scale out to a distributed microservices architecture if the requirements change, or is the need of scaling
+
+### Day12
+
+- Microservice Architecture
+    - Different features, tasks are split into separate respective modules/codebases which work in conjunction with each other forming a large service as a whole
+    - Follows Single Responsibility and Separation of Concerns
+    - Easy maintenance, feature development, testing and deployment
+    - Different modules can be assigned to different teams as they are separated by their varying functions
+    - Designed to scale
+    - Pros
+        - No Single Points of Failure
+        - Leaverages the heterogeneous technologies
+        - Independent and continuous deployments
+    - Cons
+        - Complexities in Management
+        - No strongn consistency
+- Three approaches that can be followed
+    - Picking a monolithic architecture
+    - Picking a microservice architecture
+    - Starting with a monolithic architecture and then later scale out to a microservice architecture
