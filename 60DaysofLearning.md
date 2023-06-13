@@ -288,3 +288,24 @@
     - Picking a monolithic architecture
     - Picking a microservice architecture
     - Starting with a monolithic architecture and then later scale out to a microservice architecture
+
+### Day13
+
+- Database
+    - Component required to persist data
+    - Types of data
+        - Structured
+            - Having certain structure, stored in normalized fashion in the database
+            - No need for data preparation logic, direct interaction with data
+            - Managed by SQL
+        - Unstructured
+            - No definite structure
+            - Hetergeneous data comprising text, image, video, multimedia, pdf, blob, documents, etc
+            - Data often in data analytics from IoT devices, social networks, web portals, etc
+            - Need data preparation logic before interacting with it
+       - Semi-structured
+            - Mix of structured and unstructured data
+            - Often stored in XML or JSON formats
+        - User state data
+            - Information of all the activity which the user performs on the website
+            - Improves user browsing experience and the conversion rate for the business
