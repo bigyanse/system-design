@@ -305,7 +305,31 @@
             - Need data preparation logic before interacting with it
        - Semi-structured
             - Mix of structured and unstructured data
-            - Often stored in XML or JSON formats
-        - User state data
+            - Often stored in XML or JSON formats User state data
             - Information of all the activity which the user performs on the website
             - Improves user browsing experience and the conversion rate for the business
+
+### Day14
+
+- Relational Database
+    - Database saves data containing relationships
+    - 1-1, 1-M, M-M, M-1, here M=many
+    - SQL is used
+    - Relationships
+    - ACID Transactions
+        - Atomicity: Either transaction occurs fully or not at all
+        - Consistency: Ram sends 10 to Shyam, Ram account negates 10, Shyam's adds 10
+        - Integrity: Permanent changes
+        - Durability: Can be retained for longer period of time
+    - Pros
+        - ACID transactions
+        - Large community
+        - Storing relationships
+    - Popular databases
+        - MySQL
+        - PostgreSQL
+        - MS SQL
+        - MariaDB
+        - Google Cloud SQL
+        - Oracle SQL
+        - Amazon Aurora
