@@ -333,3 +333,28 @@
         - Google Cloud SQL
         - Oracle SQL
         - Amazon Aurora
+
+### Day15
+
+- NoSQL Database
+    - No SQL, built for high frequency read and writes
+    - Why choose NoSQL database over relational database?
+        - Scalability
+        - Clustering
+    - Less consistent and sacrifice ACID transactions
+    - Built to run clusters in a distributed environment
+    - Pros
+        - Gentle learning curve
+        - Schemaless
+    - Cons
+        - Inconsistency
+        - No support for ACID transactions
+        - Transactions in distributed systems come with terms and conditions applied
+    - Eg: MongoDB, Redis, Neo4j, Cassandra
+    - When to pick NoSQL database?
+        - Handling a large number of read write operations
+        - Flexibility with data modeling
+        - Eventual consistency over strong consistency
+        - Running data analytics
+    - A well designed SQL will always be more performant than a not so well-designed NoSQL store
+    - Leveraging the power of multiple databases is called polyglot persistence 
