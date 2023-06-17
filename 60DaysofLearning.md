@@ -381,3 +381,25 @@
     - Multi-model databases are those that have the ability to use different data models in a single database system
     - Avert the need of managing multiple persistence technologies in a single service, reduce complexity by notches
     - Arango DB, Cosmos DB, Orient DB, Couchbase
+
+### Day17
+
+- Eventual Consistency
+    - Model which enables the data store to be highly available, also known as optimistic replication and is very important in distributed systems
+    - Datastores for sites are spread across the world whcih is used for persisting data, so there is not single point of failure. Let's think of a like service is used by people across the globe. The count of likes in a post does not change at the same time. People at America and Japan may see different like counts at the same time. But eventually, the like counts get even after being updated at all the datastores as the data needs time to travel from one datastore to another, which is called eventual consistency
+    - It makes the system highly available
+    - It is suitable for use cases where the accuracy of valaues does not matter much
+    - Eg: Live stream of videos user watching count
+    - Not suitable for live data for banking, stock markets, we need strong consistency
+- Strong Consistency
+    - Data has to be strongly consistent at all times
+    - Locking down nodes while data is being updated
+    - Lifting locks when the nodes reach consensus
+    - Stock market applications
+    - Queuing the requests is a way to make a system consistent
+    - CAP theorem is a key to implement consistency models
+    - Hits the capability of the system to be highly available
+    - Needs to be ACID compliant
+- CAP theorem
+    - Consistency, Availablity, Partition Tolerance(Fault Tolerance)
+    - CAP theorem states that in case of a network failure, when a few nodes of the system are down, we have to make a choice between availability and consistency
