@@ -403,3 +403,23 @@
 - CAP theorem
     - Consistency, Availablity, Partition Tolerance(Fault Tolerance)
     - CAP theorem states that in case of a network failure, when a few nodes of the system are down, we have to make a choice between availability and consistency
+
+### Day18
+
+- Document-Oriented Database
+    - Main types of NoSQL databases
+    - Store data in document-oriented model in independent documents
+    - Semi-structured and stored in JSON like format
+    - MongoDB, CouchDB, Google Cloud Datastore, Amazon Document DB
+    - Real-time feeds, live sport apps, writing product catalogues, inverntory management, storing user comments, web-based multiplayer games
+    - Provides horizontal scalability
+
+### Day19
+
+- Key-value Datastore
+- Wide-column Database
+- Relational Database
+- Graph Database
+- Time-Series Database
+- Databases dedicated to mobile apps
+
