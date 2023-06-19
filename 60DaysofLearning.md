@@ -416,10 +416,29 @@
 
 ### Day19
 
-- Key-value Datastore
-- Wide-column Database
-- Relational Database
 - Graph Database
-- Time-Series Database
-- Databases dedicated to mobile apps
-
+    - Part of NoSQL database family, which store data in node/vertices and edges in the form of relationships
+    - Each node in a graph database represents an entity, edge represents the relationship between the entities
+    - Features
+        - Better visualization of data and their relationships
+        - Low-latency, faster as not calculated at query time (not like joins in SQL)
+    - Eg used in: Google Maps
+    - When to use Graph Database?
+        - Social, knowledge, network graph
+        - Writing AI-based apps, recommendation engines, fraud analysis app, storeing genetic data
+    - Eg: Neo4J
+- Key-value Database
+    - Part of NoSQL family, which uses simple key-value method to store and quickly fetch the data with minimum latency
+    - Features
+        - Low latency
+        - Unique identifier with value of any complex type
+        - O(1) time complexity
+    - Eg: Redis, Hazelcast, Riak, Voldemort, Memcache
+    - When to use Key-value Database?
+        - Caching
+        - Persisting user state
+        - Persisting user sessions
+        - Managing real-time data
+        - Implementing queues
+        - Creating leaderboards in online games and web apps
+        - Implementing a pub-sub system
