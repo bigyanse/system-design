@@ -442,3 +442,25 @@
         - Implementing queues
         - Creating leaderboards in online games and web apps
         - Implementing a pub-sub system
+
+### Day20
+
+- Time Series Database
+    - Databases that are optimized for tracking and persisting time series data
+    - Time series data are data containing data points associated with the occurrence of an event with respect to time, that are tracked, monitored and then finally aggregated based on certain business logic
+    - It is generally ingested from IoT devices, self-driving vehicles, industry sensors, social networks, stock market financial data
+    - Use cases
+        - Track the behaviour of the system, analysis and monitoring
+        - Helps to study patterns, anomalies and how things change over time
+        - Running analytics, deducting conclusions, and making future business decisions looking at the results of the analytics
+        - Managing real-time data continually over a long period of time
+        - Anonymous trading platform which deals with changing stock prices in real time
+    - Eg: InfluxDB, TimescaleDB, Prometheus
+- Wide-column Database
+    - Part of NoSQL family, used to handle massive amounts of data, technically called the Big Data
+    - Perfect for analytical use cases as they have a high performance and a scalable architecture
+    - Store data in a record with a dynamic number of columns, can store billions of columns
+    - Eg: Cassandra, HBase, Google BigTable, ScyllaDB
+    - Use cases
+        - Need to grapple with Big Data, to ingest it or to run analytics on it
+        - To manage Big Data ensuring scalability, performance and high availability
