@@ -464,3 +464,12 @@
     - Use cases
         - Need to grapple with Big Data, to ingest it or to run analytics on it
         - To manage Big Data ensuring scalability, performance and high availability
+
+### Day21
+
+- Caching
+    - Copying frequently accessed data from disk to RAM
+    - For better response time, low latency and high throughput
+    - To keep users from bouncing off to other websites
+    - Dynamic data is cached with an expiry time or TTL(Time To Live), after TTL ends data is purged from the cache and newly updated data is stored in it, it is known as cache invalidation
+    - Static files are cached in client side, browser, local memory, also on CDNs
