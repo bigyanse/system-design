@@ -473,3 +473,32 @@
     - To keep users from bouncing off to other websites
     - Dynamic data is cached with an expiry time or TTL(Time To Live), after TTL ends data is purged from the cache and newly updated data is stored in it, it is known as cache invalidation
     - Static files are cached in client side, browser, local memory, also on CDNs
+
+### Day22
+
+- Where to use caching?
+    - Database caching, to alleviate the stress on the databased
+    - Cache frequently accessed data from the database to cut down load on the database
+    - Caching can be used in the client browser, databases, REST API, heavy compute processing
+    - Cache can also maintain high availability if database goes down
+    - Cross module communication in a microservices architecture by saving shared data which is commonly accessed by all the services, backbone for microservice communication
+    - Key-value databases are mainly used for caching, used in in-memory data stream processing and running analytics
+- Caching Strategies
+    - Cache Aside
+        - Most common caching strategy, cache works along with the database trying to reduce the hits on it as much as possible
+        - Data is lazy-loaded in the cache, first of all data is searched through the cache when user first request for particular data, if it is not present in the cache then it is loaded from the database, cache is updated and provided to the user
+        - Best for read-heavy workloads, not so frequently data updating system
+        - Data is directly written to the database, so cache have TTL because the cache could get inconsistent
+    - Read-through cache
+        - Similar to cache aside strategy except that the cache stays consistent with the database
+        - Cache is lazy-loaded, i.e. only when user requests it, first time is cache miss, but can be preloaded
+    - Write-through cache
+        - Each and every information to the database goes through cache, first cache is updated and then the database
+        - High consistency, added latency due to overheads
+        - Useful for optimized performance
+    - Write-back cache
+        - Data is directly written to cache instead of database, and after some time, it is written to the database
+        - Useful for heavy write application systems
+        - Risky if the cache fails before the databasee
+        - Used with other caching strategies to make most out of it
+        - Optimizes costs significantly
