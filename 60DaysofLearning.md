@@ -502,3 +502,18 @@
         - Risky if the cache fails before the databasee
         - Used with other caching strategies to make most out of it
         - Optimizes costs significantly
+
+### Day23
+
+- Message Queue
+    - Queue which routes messages from the source to the destination, sender to receiver
+    - It follows FIFO policy as queue
+    - Messsages may have priority, making them a priority queue
+    - Feature
+        - Facilitates asynchronous behavior, which allows modules to communicate with each other in the background without hindering their primary tasks
+        - Facilitates cross-module communication which is a key in service-oriented or microservices architecture, allows communication in heterogeneous environment
+        - Provides temporary storage for messages until they are processed and consumed by the consumer
+    - Use cases
+        - Email sending
+        - Confirmation email in a registering process of website
+        - Running batch jobs, eg: to update stock prices at regular interval
