@@ -517,3 +517,25 @@
         - Email sending
         - Confirmation email in a registering process of website
         - Running batch jobs, eg: to update stock prices at regular interval
+
+### Day24
+
+- Publish-Subscribe Model
+    - Model where multiple consumers receive the same message sent from a single or multiple producers, many to one relationship
+    - Eg: real world  newspaper service, youtube subscription service, etc
+    - Exchanges
+        - To implement pub-sub pattern message queues have exchanges which further push the messages to the queues based on the exchange type and the rules which are set
+        - Exchanges are like telephone exchanges which route messages from sender to the receiver through the infrastructure based on a certain logic
+        - Different types of exchanges are available in message queues, some of them are direct, topic, headers, fanout
+        - Relationship between exchange and the queue is known as binding
+- Point-to-Point Model
+    - Model where message from the producer is consumed by only one consumer, One to one relationship
+    - According to the requirements, we can setup multiple combinations in this model like adding multiple producers and consumers to the queue, but only one consumer will consume the message sent by producer
+    - Not broadcast but entity to entity communication
+- Messaging protocols
+    - AMQP(Advanced Message Queue Protocol)
+    - STOMP(Simple or Streaming Text Oriented Message Protocol)
+    - Technologies
+        - Apache Kafka
+        - ActiveMQ
+        - RabbitMQ
