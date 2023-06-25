@@ -539,3 +539,14 @@
         - Apache Kafka
         - ActiveMQ
         - RabbitMQ
+
+### Day25
+
+- Notification System using Message Queue
+    - Pull Based Approach: regular polling to the server and database
+    - Push Based Approach: pushing updates from message queue to user
+- We can use Message Queues for handling of concurrent requests
+- Data-Driven Systems
+    - Data Stream Processing: IoT devices in industry sensors, smart cities, electronic devices, wearable healthcare body sensors
+    - Massive amount of streaming data needs to be gathered for meaningful information by the backend systems
+    - So we need reliable system with high availablity, low latency for efficient data-driven systems
