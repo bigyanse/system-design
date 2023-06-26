@@ -550,3 +550,31 @@
     - Data Stream Processing: IoT devices in industry sensors, smart cities, electronic devices, wearable healthcare body sensors
     - Massive amount of streaming data needs to be gathered for meaningful information by the backend systems
     - So we need reliable system with high availablity, low latency for efficient data-driven systems
+
+### Day26
+
+- Data Ingestion
+    - The process of collecting data streaming-in from several different sources and making ready to be processed by the system
+    - In data processing system, the data is ingested from IoT devices and other sources, into the system to be analysed
+    - Data is routed to different components/layers through data pipelines, algorithms are run on it and is eventually archived
+- Layers of Data Processing Setup
+    - Data collection layer
+    - Data query layer
+    - Data processing layer
+    - Data visualization layer
+    - Data storage layer
+    - Data security layer
+- Data Standardization
+    - Data is streamed from different sources which may come in different sizes, speed, and every stream of data has different semantics
+    - In order for the data to be fit for processing, it has to be collected and converted into a standardized format to avoid any future processing issues, this process occurs in the Data collection and preparation layer
+- Data Processing
+    - After data is transformed into a standard format it is routed to the Data processing layer where it further processed based on the business requirements, generally classified into different flows, routed to different destinations
+- Data Analysis
+    - After being routed, analytics is run on the data which includes execution of different analytics model such as predictive modeling, statistical analysis, text analysis, etc, which all occur in Data analytics layer
+- Data Visualization
+    - Once the analytics are run and we have valuable intel from it, it is routed to the Data visualization layer to be presented before the stakeholders in web-based dashboard
+    - Eg: Kibana
+- Data Storage and Security
+    - Moving data is highly vulnerable to security breaches
+    - Data security layer ensures the secure movement of data
+    - Data storage layer ensures that the data persists for long time without being lost
