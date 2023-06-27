@@ -578,3 +578,31 @@
     - Moving data is highly vulnerable to security breaches
     - Data security layer ensures the secure movement of data
     - Data storage layer ensures that the data persists for long time without being lost
+
+### Day27
+
+- Ways to ingest data
+    - Real-time
+        - Preferred in systems reading medical data like a heartbeat, blood pressure via wearable IoT sensors, financial data like stock market events, where the time is of critical importance
+    - Batches
+        - Systems that read trends over time, we can always ingest data in batches, estimating the popularity of a sport in a region over a period of time
+- Challenges with Data Ingestion
+    - Slow Process
+        - Conversion of data is a slow and tedious process which takes a lot of computing resources and time
+        - Flowing data has to be staged at several stages in the pipeline and then moved ahead
+        - At each and  every stage data has to be authenticated and verified to meet the organization's security standards
+        - With traditional data cleansing processes, it takes weeks if not months to get useful information on hand
+        - Traditional data ingestion systems like ETL are not that effective anymore, but modern data processing is evolving
+        - Real=time data processing is not accurate and holistic than Batches, which is more accurate and holistic as it accounts the entire dataset
+        - Lambda and Kappa architectures of data processing
+    - Complex and Expensive
+        - Entire data flow process is resource-intensive
+        - Linkedin uses Gobblin for data ingestion
+    - Moving data around is risky
+- Use Cases of Data Ingestion
+    - Moving Big Data into Hadoop (Data processing framework) for analysis and stuff
+    - Streaming Data from Databases to Elasticsearch Server
+        - Elastic search is an open-source, defacto search framework in th e industry for implementing search in web applicaitons due to its advanced features and open-source, enabling business to write their own custom solutions
+    - Log Processing: Ingest logs to central server to run analytics on it with the help of solutions like ELK Elastic LogStash Kibana stack, etc
+    - Stream Processing Engines for Real-Time Events
+        - Message queues like Kafka, Stream computation frameworks like Apaache Storm, Apache Nifi, Apache Spark, Samza, Kinesis, etc are used to implement the real-time large-scale data processing features in online applications
