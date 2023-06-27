@@ -602,7 +602,7 @@
 - Use Cases of Data Ingestion
     - Moving Big Data into Hadoop (Data processing framework) for analysis and stuff
     - Streaming Data from Databases to Elasticsearch Server
-        - Elastic search is an open-source, defacto search framework in th e industry for implementing search in web applicaitons due to its advanced features and open-source, enabling business to write their own custom solutions
+        - Elastic search is an open-source, defacto search framework in the industry for implementing search in web applicaitons due to its advanced features and open-source, enabling business to write their own custom solutions
     - Log Processing: Ingest logs to central server to run analytics on it with the help of solutions like ELK Elastic LogStash Kibana stack, etc
     - Stream Processing Engines for Real-Time Events
         - Message queues like Kafka, Stream computation frameworks like Apaache Storm, Apache Nifi, Apache Spark, Samza, Kinesis, etc are used to implement the real-time large-scale data processing features in online applications
