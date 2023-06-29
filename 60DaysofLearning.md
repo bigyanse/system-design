@@ -629,3 +629,27 @@
     - ETL flow is the same as data ingestion flow, movement of data is done  in batches instead of streaming it, through data pipelines in real-time
     - Both real-time and batch data processing are leveraged based on th eproject requirements
     - All data processing tools have one thing in common, they facilitate processing of data in a cluster, in a distributed environment via data pipelines
+
+### Day29
+
+- Distributed Data Processing
+    - Diverging large amounts of data to several different nodes, running in a cluster for parallel processing
+    - All the nodes execute the task allotted parallely, working in conjunction with each other co-ordinated by a node co-ordinator like Apache Zookeeper helps achieve scalability and high availability, data redundancy and replication
+    - Less amount of time for processing opposed to centralized data processing system
+- Distributed Data Processing Technologies
+    - MapReduce - Apache Hadoop
+        - MapReduce is a programming model written for managing distributed data processing across several different machines in a cluster, distributing tasks to several machines, running work in parallel, managing all the communication and data transfer within different parts of the system
+        - Map part of the model involves sorting the data based on a parameter and the Reduce part involves summarizing the sorted data
+        - Apache Hadoop is the example of MapReduce programming model, used by Twitter for running analytics and Facebook for storing big data
+    - ApacheSpark
+        - Open-source cluster computing framework, which provides high performance for both batch and real-time in-stream processing, and can work with diverse data sources and facilitates parallel executing of work in a cluster
+        - Has cluster manager and distributed data storage
+        - Facilitates communication between different nodes running together in a cluster whereas the distributed storage facilitates storage of big data
+        - Seamlessly integrates with the distributed data stores like Cassandra, HDFS, MapReduce File System, Amazon S3, etc
+    - Apache Storm
+        - Distributed stream processing framework, primarily used for processing massive amounts of streaming data, which has several use cases such as real-time analytics, machine learning, distributed remote procedure calls, etc
+    - Apache Kafka
+        - Open-source distributed stream processing and messaging platform, written using Java and Scala and was developed by LinkedIn
+        - Storage layer of Kafka involves a distributed scalable pub/sub message queue, which helps read and write streams of data like a messaging system
+        - Used in the industry to develop real-time features such as notification platforms, messaging streams of massive amounts of data, monitoring website activity and metrics, messaging, log aggregation
+        - Preferred for batch processing of data whereas Spark, Kafka and Storm are preferred for processing real-time streaming data
