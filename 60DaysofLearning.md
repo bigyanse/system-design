@@ -590,10 +590,10 @@
     - Slow Process
         - Conversion of data is a slow and tedious process which takes a lot of computing resources and time
         - Flowing data has to be staged at several stages in the pipeline and then moved ahead
-        - At each and  every stage data has to be authenticated and verified to meet the organization's security standards
+        - At each and every stage data has to be authenticated and verified to meet the organization's security standards
         - With traditional data cleansing processes, it takes weeks if not months to get useful information on hand
         - Traditional data ingestion systems like ETL are not that effective anymore, but modern data processing is evolving
-        - Real=time data processing is not accurate and holistic than Batches, which is more accurate and holistic as it accounts the entire dataset
+        - Real-time data processing is not accurate and holistic than Batches, which is more accurate and holistic as it accounts the entire dataset
         - Lambda and Kappa architectures of data processing
     - Complex and Expensive
         - Entire data flow process is resource-intensive
@@ -605,4 +605,27 @@
         - Elastic search is an open-source, defacto search framework in the industry for implementing search in web applicaitons due to its advanced features and open-source, enabling business to write their own custom solutions
     - Log Processing: Ingest logs to central server to run analytics on it with the help of solutions like ELK Elastic LogStash Kibana stack, etc
     - Stream Processing Engines for Real-Time Events
-        - Message queues like Kafka, Stream computation frameworks like Apaache Storm, Apache Nifi, Apache Spark, Samza, Kinesis, etc are used to implement the real-time large-scale data processing features in online applications
+        - Message queues like Kafka, Stream computation frameworks like Apache Storm, Apache Nifi, Apache Spark, Samza, Kinesis, etc are used to implement the real-time large-scale data processing features in online applications
+
+### Day28
+
+- Data Pipelining
+    - Data pipelines are the core component of a data processing infrastructure, which facilitate the efficient flow of data from one point to another and also enable developers to apply filters on the data sreaming-in in real time
+    - Today's enterprise is data-driver so data pipelines play important tole in implmeneting scalable analytics systems
+    - Features of Data Pipelines
+        - Ensures smooth flow of data
+        - Enables the business to apply filters and business logic on streaming data
+        - Avert any bottlenecks and redundancy in the data flow
+        - Facilitate parallel processing of data
+        - Avoid data being corrupted
+    - Pipelines work on a set of rules predefined by the engineering teams and the data is routed accordingly without any manual intervention
+    - Data extraction, transformation, combination, validation, converging of data from multiple streams into one
+    - Facilitate parallel processing of data via managing multiple streams
+    - ETL is traditionally used to handle all the movement of data but it does not support real-time streaming data handling
+- ETL (Extract Transform Load)
+    - Extract means fetching data from single or multiple sources
+    - Transform means transforming the extracted heterogeneous data into a standardized format based on the rules set by the business
+    - Load means moving the tranformed data to a data warehouse or another data storage location for further processing of data
+    - ETL flow is the same as data ingestion flow, movement of data is done  in batches instead of streaming it, through data pipelines in real-time
+    - Both real-time and batch data processing are leveraged based on th eproject requirements
+    - All data processing tools have one thing in common, they facilitate processing of data in a cluster, in a distributed environment via data pipelines
