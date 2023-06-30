@@ -641,7 +641,7 @@
         - MapReduce is a programming model written for managing distributed data processing across several different machines in a cluster, distributing tasks to several machines, running work in parallel, managing all the communication and data transfer within different parts of the system
         - Map part of the model involves sorting the data based on a parameter and the Reduce part involves summarizing the sorted data
         - Apache Hadoop is the example of MapReduce programming model, used by Twitter for running analytics and Facebook for storing big data
-    - ApacheSpark
+    - Apache Spark
         - Open-source cluster computing framework, which provides high performance for both batch and real-time in-stream processing, and can work with diverse data sources and facilitates parallel executing of work in a cluster
         - Has cluster manager and distributed data storage
         - Facilitates communication between different nodes running together in a cluster whereas the distributed storage facilitates storage of big data
@@ -653,3 +653,24 @@
         - Storage layer of Kafka involves a distributed scalable pub/sub message queue, which helps read and write streams of data like a messaging system
         - Used in the industry to develop real-time features such as notification platforms, messaging streams of massive amounts of data, monitoring website activity and metrics, messaging, log aggregation
         - Preferred for batch processing of data whereas Spark, Kafka and Storm are preferred for processing real-time streaming data
+
+### Day30
+
+- Lambda Architecture
+    - Distributed Data Processing architecture that leverages both the batch and real-time streaming data processing approaches to tackle the latency issues arising out of the batch processing approach, joins the results from both the approaches before presenting it to the end user
+    - Batch processing takes considerable time but have high accuracy and comprehensive result
+    - Real-time streaming data processing provides quick insights, but the accuracy is low and results are not comprehensive
+    - Layers of the Lambda Architecture
+        - Three layers
+            - Batch Layer: deals with results acquired via batch processing the data
+            - Speed Layer: gets data from the real-time streaming data processing
+            - Serving Layer: combines the results obtained from both the Batch and the Speed layers
+- Kappa Architecture
+    - Data flows through a single data streaming pipeline as opposed to the Lambda Architecture which has different data streaming layers that converge into one
+    - Reduces the complexity of managing separate layers for processing data
+    - Layers of Kappa Architecture
+        - Speed: streaming processing layer
+        - Serving: final layer
+    - Not an alternative for lambda, both have their own use cases
+- Kappa is preferred if the batch and the streaming analytics results are fairly identical in a system, Lambda is preferred if they are not
+- Distributed System does not promise Strong Consistency of data
