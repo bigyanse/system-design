@@ -674,3 +674,24 @@
     - Not an alternative for lambda, both have their own use cases
 - Kappa is preferred if the batch and the streaming analytics results are fairly identical in a system, Lambda is preferred if they are not
 - Distributed System does not promise Strong Consistency of data
+
+### Day31
+
+- Events
+    - Two kinds of processes in applications:
+        - CPU intensive
+        - I/O intensive:
+            - in context of web applications I/O means events
+            - tweet, click of a button, HTTP request, ingested messages, change in value of a variable, etc are events
+            - Request-response events between client and server, stream of events, etc
+- Event-Driven Archietecture (EDA)
+    - Blocking Operations: the flow of execution is blocked waiting for a process to complete, until the process is completed, it cannot move on
+    - Non-Blocking Operations:
+        - Also known as the reactive or Event-Driven Architecture (EDA)
+        - the flow of execution is not blocked, even though the function may return a response or an error, it will be sequenced to run next
+        - facilitates the I/O intensive operations(network, disk, hardware based operations and communications)
+        - capable of handling a big number of concurrent connections with minimal resource consumption
+        - built to run on a cluster, handle large scale concurrent scenarios, tackle problems
+        - enable us to write code without worrying about multi-threads, thread lock, out of memory issues due to high I/O, etc
+    - Technologies for implementing EDA
+        - Spring Reactor, NodeJS, Play, Akka.io
