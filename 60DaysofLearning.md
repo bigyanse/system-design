@@ -695,3 +695,17 @@
         - enable us to write code without worrying about multi-threads, thread lock, out of memory issues due to high I/O, etc
     - Technologies for implementing EDA
         - Spring Reactor, NodeJS, Play, Akka.io
+
+### Day32
+
+- Web Hooks
+    - Web Hooks enables communication between two services without a middleware
+    - Web Hooks are like call-backs, when some event occurs, other services are notified that are interested in that events
+    - Web Hooks are used in scenario when triggering API endpoints are costly and redundant, instead when some event happens instead it notifies to the interested parties
+    - Working
+        - Consumers register an HTTP endpoint with the service with a unique API key, like a phone number, when an event occurs, it calls on that endpoint once
+        - Whenever a new information is available on the backend, the server fires an HTTP event to all the registered endpoints of the consumers, notifying them of the new update
+        - Browser notifications are a good example of Web Hooks. Insted of visiting the websites every now and then for new info, the websites notify us when they publish new content
+- Shared Nothing Architecture
+    - When several modules work in conjunction with each other they often share RAM also known as shared memory, they share disk(i.e database), and they share nothing, the architecture of the system where the modules or the services sharing nothing is called the Shared Nothing Architecture
+    - Shared Nothing means eliminating all single points of failure, every modules has its own memory, disk so even if several modules go down, other will stay online, helping scalability and performance
