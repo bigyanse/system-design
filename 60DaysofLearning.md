@@ -709,3 +709,21 @@
 - Shared Nothing Architecture
     - When several modules work in conjunction with each other they often share RAM also known as shared memory, they share disk(i.e database), and they share nothing, the architecture of the system where the modules or the services sharing nothing is called the Shared Nothing Architecture
     - Shared Nothing means eliminating all single points of failure, every modules has its own memory, disk so even if several modules go down, other will stay online, helping scalability and performance
+
+### Day33
+
+- Hexagonal Architecture
+    - Components
+        - Ports
+        - Adapters
+        - Domain
+    - Focused on making components of the application: independent, loosely coupled and easy to test
+    - The application should be designed in a way such that it can be tested by humans, automated tests, with mock databases, mock middleware, with and without a UI, without making any changes or adjustments to the code
+    - Architectural pattern
+        - Domain: Business logic
+        - Ports: API
+        - Adapters: Interface
+    - Hexagonal shape doesn't have anything to do with the pattern logic, ports and adapters are named after the work they do
+    - Can be said as evolved layered architecture, difference being that in layered approach business logic gets scattered all over the layers making testing, refactoring and pluggability of new entities difficult, just like stored procedures in the databases and the business logic coupled with the UI in JSP
+    - JSP and stored procedures have UI, persistence layer separate but business logic is tightly coupled with these layers
+    - Hexagonal pattern holds business logic and outside layer, the Ports and Adapaters which involve the databases, message queues, APIs and stuff
