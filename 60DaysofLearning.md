@@ -727,3 +727,43 @@
     - Can be said as evolved layered architecture, difference being that in layered approach business logic gets scattered all over the layers making testing, refactoring and pluggability of new entities difficult, just like stored procedures in the databases and the business logic coupled with the UI in JSP
     - JSP and stored procedures have UI, persistence layer separate but business logic is tightly coupled with these layers
     - Hexagonal pattern holds business logic and outside layer, the Ports and Adapaters which involve the databases, message queues, APIs and stuff
+
+### Day34
+
+- Peer-to-Peer Architecture (P2P)
+    - A network in which computers(nodes) can communicate with each other without the need of a central server
+    - P2P architecture is the base of blockchain tech, torrent, etc
+    - No single point of failure due no absence of central server
+    - All node acts as a seeder and a leecher at the same time, so even if some of the nodes go down, the network and the communication is still up
+    - A seeder is a node which hosts the data on its system and provides bandwidth to upload the data to the network, a leecher is a node which downloads the data from the network
+- Downsides of Centralized Systems 
+    - Central server has access to all of the information of the users, so communication and security issues is prevalent, data may be breached, sold, or data may get lost due to disasters, or the server plans to go down along with all your hardships on the platform for creating that data(assume facebook page with following of 1M+)
+- Decentralized Architecture
+    - P2P network is based on decentralized architecture, in which nobody has control over a user's data, nobody can delete the data, everyone has equal rights
+    - Even during disasters, P2P is useful in case all the infrastructure goes down
+- Advantages of P2P Network
+    - P2P file sharing with no limits
+    - Torrenting
+    - Communicating
+- Working of P2P
+    - Nodes taking part equally acting as both client and server in the network
+    - Data is exchanged over TCP/IP like that over the HTTP protocol in a client-server model
+    - P2P design has an overlay network over TCP/IP which enables the users to connect directly which takes care all of the complexities and heavy lifting
+    - Nodes/Peers are indexed and discoverable in this overlay network
+    - Files are transferred between the nodes by being divided into chunks of equal size in a non-sequential order
+    - Segmented P2P file transfer: a node download a file in chunks, making it available for downloading for other nodes in the network
+- Types of P2P Networks
+    - Unstructured
+        - Nodes/peers keep connecting with each other randomly, so there is no structure, they simply connect and grow the network
+        - No indexing of the nodes, to search through data, we have to scan through each and every node of the network, O(n) complexity, n is the nodes in the network, which is very resource-intensive
+        - Protocols of the unstructured network: Gossip, Kazaa, Gnutella
+    - Structured
+        - Holds proper indexing of the nodes or the topology, making it faster and easier to search for specific data
+        - Implements Distributed Hash Table to index the nodes, just like index of a book
+        - Eg: BitTorrent
+    - Hybrid
+        - Majority of blockchain startups have a hybrid model, cherry-picking the good stuff from distributed architecture and models like P2P, client-server model, etc
+        - Client-server model have control over the data and the network, P2P network offer more availability, less storage, less bandwidth, more scalable as everything is distributed and shared
+        - No third party intervention, data is secure
+        - Eg: Cryptocurrency
+        - P2P applications: Tradepal, P2P digital cryptocurrencies like Bitcoin, Peercoin, GitTorrent(decentralized github which used bittorrent and bitcoin), Twister(decentralized microblogging service, which uses WebTorrent for media attachments), Diaspora(decentralized social network implementing federated architecture)
