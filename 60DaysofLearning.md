@@ -767,3 +767,32 @@
         - No third party intervention, data is secure
         - Eg: Cryptocurrency
         - P2P applications: Tradepal, P2P digital cryptocurrencies like Bitcoin, Peercoin, GitTorrent(decentralized github which used bittorrent and bitcoin), Twister(decentralized microblogging service, which uses WebTorrent for media attachments), Diaspora(decentralized social network implementing federated architecture)
+
+### Day35
+
+- Decentralized Social Network
+    - Decentralized social networks have servers spread out across the globe, hosted by normal users, nobody has control over the network
+    - Eg: Minds, Mostodon, Diaspora, Freiendica, Sola, etc
+- Features of Decentralized Social Network
+    - Bring Your Own Data
+    - Ensuring the Safety of Our Data
+    - Economic compensation to the parties involved in the network
+        - People sharing their computing power to host the network get their compensation in the form of tokens or equity or whatever as per the economic policy of the network
+        - Teams involved in moderating the network, developers writing new features get compensated by enabling content relevant ads on the network or by the token-based economy of the platform
+    - Infrastructure Ease
+        - Infrastructure cost should not be beared by a single entity since it is decentralized
+        - No network downtime, no server cost worries, no data loss
+        - Open-source protocols and software which can be improved by community contributions
+        - Eg: ActivityPub, open-source decentralized social networking protocol which provides and API for modifying and accessing the content on the network, also for communication with other pods in the federation
+- Federated Architecture
+    - Extension to the decentralized architecture, it powers social networks like Mastodon, Minds, Diaspora, etc
+    - Federated means a group of semi-autonomous entities exchanging information with each other, eg: looking at different states of a country which are managed by the state governments, they are partially self governing and exercise the power to keep information with each other and with a central government making a complete autonomous government
+    - Federated model is under continual research, development and evolution from a technical standpoint, there are no standard rules
+    - Developers, architects can have their own designs in place, as it is decentralized
+- How is Social Networks implemented using Federated Architecture?
+    - Federated Network has entities called servers or pods, a large number of nodes subscribe to the pods, there are several pods in the network that are linked to each other and share information with each other
+    - The pods can be hosted by individuals as it is ideally archived in a decentralized network, and any new can be hosted and introduced to the network
+    - If any pods break temporarily, the network is still up and nodes can still communicate with each other via the pods they are subscribed to
+- Needs for Pods
+    - It facilitates node discovery
+    - In P2P network, node discovery is not possible, as we would have to scan through the network and try to discover, which is time-consuming and tedius task
