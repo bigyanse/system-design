@@ -796,3 +796,25 @@
 - Needs for Pods
     - It facilitates node discovery
     - In P2P network, node discovery is not possible, as we would have to scan through the network and try to discover, which is time-consuming and tedius task
+
+### Day36
+
+- Picking the Right Server-Side Technology
+    - Real-time Data Interaction
+        - Persistent connection between client and server, non-blocking technology on the back-end
+        - Technologies: NodeJS, Python framework called Tornado, Java: Spring Reactor, Play, Akka.io
+        - Uber uses NodeJS to write their core trip execution engine, using which they manage number of concurrent connections
+    - P2P Web Application
+        - For P2P Web App, P2P Distributed search engine or a P2P live TV radio service, similar to LiveStation by Microsoft, look into JavaScript, protocols like DAT, IPFS, FreedomJS framework to build P2P web apps that work in modern web browsers
+    - CRUD-based regular application
+        - For online movie booking portal, a tax filing app, etc, Use MVC frameworks like Spring MVC, Python Django, Ruby on Rails, PHP, Laravel, ASP .NET MVC
+    - Simple, Small Scale Applications
+        - PHP, Spring boot, Ruby on ails are ideal for simple use cases
+    - CPU & Memory Intensive Applications
+        - CPU, memory intensive, heavy computational task on the backend such as Big Data Processing, Parallel processing, running monitoring and analytics on large amount of data
+        - Performance is critical in systems like that where it needs to handle massive amounts of data and has its cost, need low latency and memory consumption
+        - C++, Rust, Java, Scala & Erlang that has high performance and safe concurrency
+        - Elastic Search is an open source real-time search and analytics engine written in Java
+        - Erlang is fucntional programming language with built-in support for concurrency, fault-tolerance and distribution. It facilitates the development of massive scalable systems
+        - Go is developed by Google to write apps for multi-core machines and handling a large amount of data
+        - Julia is a dynamically programmed language built for high performance and running computations and numerical analysis
