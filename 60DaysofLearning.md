@@ -818,3 +818,13 @@
         - Erlang is fucntional programming language with built-in support for concurrency, fault-tolerance and distribution. It facilitates the development of massive scalable systems
         - Go is developed by Google to write apps for multi-core machines and handling a large amount of data
         - Julia is a dynamically programmed language built for high performance and running computations and numerical analysis
+
+### Day37
+
+- Things to Remember When Picking the Tech Stack
+    - Be thorough with the Requirements
+    - See if what we already know fits the requirements
+    - Does the tech we have picked has an active community? How is the documentation and the support?
+    - Is the tech being used by big guns in production?
+    - Check the license. Is it open source?
+    - Availability of skilled resources on the tech
