@@ -141,7 +141,7 @@
 ### Day08
 
 - Scalability
-    - Ability of the application to  handle and withstand increased worklaoad without sacrificing the latency
+    - Ability of the application to handle and withstand increased worklaoad without sacrificing the latency
     - Eg: it should take x second to respond to a user request and the same for million concurrent requests
     - Backend infrastructure should not crash on million concurrent requests and should scale well when subjected to heavy traffic load and should maintain the latency of the sytem
 - Latency
@@ -186,7 +186,7 @@
     - Application Architecture
         - Common mistake is not using asynchronous processes and modules
         - Sending confirmation email, notifications to the user must be done asynchronously
-        - Such tasks should be forwarded to messageing server rather than doing it on the server and synchronously
+        - Such tasks should be forwarded to messaging server rather than doing it on the server and synchronously
     - Not using caching wisely
     - Inefficient configurations and setup of load balancers
     - Adding business logic to the database: moving from one database to another makes it inefficient
@@ -208,7 +208,7 @@
     - Testing scalability of the application
         - Testing can be done on hardware or software level
         - Different parameters such as CPU usage, network bandwidth consumption, throughput, no of requests processed within a stipulated time, latency, memory usage of the program, end user experience when system is under heavy load, are taken into account
-        - Simulated traffic can be routed to the sustem to study how the ssystem will behave under heavy load and plan for contingencies
+        - Simulated traffic can be routed to the system to study how the system will behave under heavy load and plan for contingencies
         - JMeter is used to run concurrent user test
         - Sports website should prepare for sports event day, ecommerce for festival season,etc
         - Cadvisor, Prometheus, Grafana are use to track the system via web based dashboards
@@ -828,3 +828,22 @@
     - Is the tech being used by big guns in production?
     - Check the license. Is it open source?
     - Availability of skilled resources on the tech
+
+### Day38
+
+- Case Study of Google Maps Like Service
+    - A read-heavy application
+    - Data Type: Spatial data
+    - Databases: Spatial databases
+    - Architecture: Client-server model
+    - Backend Technology: Java, Go, Scala, Elixir/Erlang or Python
+    - Microservice architecture: Since the system will be big, needs to be highly available, performant, low latency, and needs to scale well for high traffic spikes
+    - Server Side Rendering
+        - Can cache rendered image
+        - Can create rendered image in advance and cache it
+    - APIs
+        - Direction API, Distance Matrix, Geocoding, Places, Roads, Elevation, Timezone, Custom Search API, etc
+    - User Interface
+        - OpenLayers
+        - JavaScript
+    - Real-Time Features
