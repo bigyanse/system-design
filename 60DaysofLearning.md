@@ -847,3 +847,24 @@
         - OpenLayers
         - JavaScript
     - Real-Time Features
+
+### Day39
+
+- Case Study of Online Ticket Booking Application (General)
+    - Database
+        - Since we need ACID transactions, we go with relational databases
+    - Concurrency
+        - There will be surge of requests at some time so to handle that we need Message Queue using FIFO approach
+        - Database Lock
+            - We can also use database lock to maintain consistency and handle concurrency
+            - Transaction Isolation level ensures that at a point in time only one transaction has access to resource in the database
+            - Snapshot isolation
+    - Caching
+        - Redis, Memcache, Hazelcast
+    - Backend
+        - Python, Go, Scala, Java, etc
+    - Notifications
+        - RabbitMQ, Kafka
+    - User Interface
+        - Plain old HTML, CSS
+        - UI Library or frameworks like React, Angular, Vue, Svelte
