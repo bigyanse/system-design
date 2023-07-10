@@ -868,3 +868,58 @@
     - User Interface
         - Plain old HTML, CSS
         - UI Library or frameworks like React, Angular, Vue, Svelte
+
+### Day40
+
+- Mobile App Design
+    - Today most of the services are focused towards mobile phone due to mobile phone mostly being in everyone's hand
+    - Before designing mobile app if the business already has web app, we need to think before diving in as it may not be totally required and also it takes different approach than buiding/designing web app, as mobile phone has less power, resources than a computer
+    - Different approach
+        - Mobile Only
+        - Mobile First: with major users being in mobile
+        - Mobile Friendly: with major users being in desktop
+    - Do we need mobile app?
+        - Focus on what type of sevice is to be provided, maybe it needs mobile rather than opening web everytime for completing it
+        - Do users use you service through mobile more? Study other similar business analytics
+- Responsive Interface
+    - Since there are different devices with different screen sizes like android, ios, desktop, TVs, etc, we need responsive interface to run across all devices which would lower development cost
+- Types of Mobile Apps
+    - Native App:
+        - specific OS, android, ios, windows phone
+        - full access to device resources
+        - high performance
+        - consistent interface
+        - developed using native SDKs and APIs by native OS
+        - Eg: Java, Kotlin, Swift, Objective C, Cocoa Touch framework
+    - Hybrid App
+        - Uses web technologies like HTML, CSS, JS
+        - Eg: Cordova, Ionic, PhoneGap
+    - Cross-platform App
+        - React-native
+        - Flutter
+- Choosing between native and hybrid apps
+    - If performance is needed go native else cross-platform hybrid should be fine
+    - Or if you don't have specific needs to go native go cross-platform
+    - Other factors like cost, time, also comes into play if these constraints then go cross-platform
+- Progressive Web Apps(PWAs)
+    - App like experience with a web application
+    - Not an native app replacement
+- Mobile Backend as a Service(MBaaS)
+    - Cloud-based service that takes care of the backend infrastructures of our mobile app and enables us to focus on business logic and user interface
+    - Features
+        - User Authentication
+        - Social Network Integration
+        - Push-notifications
+        - Real-time Database
+        - caching
+        - Data Storage
+        - Messaging
+        - Chat Integration
+        - Integration of third party tools
+        - Crash Reporting
+    - Eg: Google Firebase, AWS Amplify, Parse
+    - Pros
+        - Can deploy and have mobile app running really fast
+    - Cons
+        - Vendor locking
+    - Can use it side by side with on-premises structure or other backend infrastructure
