@@ -923,3 +923,19 @@
     - Cons
         - Vendor locking
     - Can use it side by side with on-premises structure or other backend infrastructure
+
+### Day41
+
+- Reverse Proxy (Web Server)
+    - Web server that centralizes internal services and provides unified interfaces to the public
+    - Requests from clients are forwarded to a server that can fulfill it before the reverse proxy returns the server's response to the client
+    - Pros
+        - Increased security
+        - Increased scalability and flexibility
+        - SSL Termination: no need to install X.509 certificates on each server
+        - Compression
+        - Caching
+        - Serve static content directly
+    - Cons
+        - Increased complexity
+        - Single point of failure of single reverse proxy introduces multiple reverse proxies which further adds complexity
