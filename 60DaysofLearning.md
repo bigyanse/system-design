@@ -939,3 +939,38 @@
     - Cons
         - Increased complexity
         - Single point of failure of single reverse proxy introduces multiple reverse proxies which further adds complexity
+    - Technologies: HAProxy, NGINX
+
+### Day42
+
+- Load Balancers
+    - Distributes incoming client requests to computing resources such as application servers and databases and returns the response from the computing resource to the appropriate client
+    - Effective at preventing request from going to unhealthy servers, preventing overloading resources, eliminate a single point of failure
+    - Can either be implemented with hardware(expensive) or software
+    - Benefits
+        - SSL Termination
+        - Session Persistence: issues cookies and route requests to same instance if web apps dont keep track of sessions
+    - Can be effective with multiple load balancers either in active-passive or active-active mode in case of failures
+    - Can route traffic based on various metrics:
+        - Random
+        - Least Loaded
+        - Session/cookies
+        - Round Robin or Weighted Round Robin
+        - Layer 4
+            - Focus on transport layer to decide how to distribute requests, involves source, destination ip address, ports in the header but not the contens of the packer
+            - Forward network packets to and from the upstream server, performing Network Address Translation(NAT)
+        - Layer 7
+            - Focus on application layer to decide how to distribute requests, involves the header, message and cookies
+            - Terminate network traffic, reads the message, makes a load-balancing decision, then open a connection to the selected server, for eg: it can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened Servers
+        - Layer 4 load balancing requires less time and computing resources than Layer 7, although performance impact can be minimal on modern commodity hardware
+        - Horizontal Scaling
+            - Load balancer help with horizontal scaling, improves performance and availability
+            - Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called vertical scaling, easy to hire talent on commodity hardware than specialized enterprise systems
+            - Cons
+                - Introduces complexity
+                    - Stateless servers
+                    - Sessions should be stored in databases(SQL, NoSQL, Persistent Cache)
+                - Downstream such as caches and databases need to handle more simultaneoous connections as upstream servers scale out
+        - Cons of Load Balancer
+            - Performance bottleneck if it does not have enough resources or if it is not configured properly
+            - Increased complexity by single load balancer or multiple load balancers
