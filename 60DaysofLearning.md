@@ -974,3 +974,24 @@
         - Cons of Load Balancer
             - Performance bottleneck if it does not have enough resources or if it is not configured properly
             - Increased complexity by single load balancer or multiple load balancers
+
+### Day43
+
+- Reverse Proxy vs Load Balancer
+    - Load Balancer is useful when you have multiple servers, load balancers route traffic to a set of servers serving the same function
+    - Reverse proxy is useful even with just one web server or application server
+- NGINX Architecture
+    - NGINX Process Model
+        - Master Process:
+            - Performs the priveleged operations such as reading configuration and binding to ports
+        - Child Process
+            - Shared memory is used for cache, session persistence, rate limits, session log
+            - Worker processes handle HTTP and other network traffic
+    - How does NGINX work?
+        - Master process performs the privileged operations such as reading configuration and binding to ports and then creates a small number of child processes
+        - The cache loader process runs at startup to load the disk-based cache into memory, and then exists. It is scheduled conservatively, so its resource demands are low
+        - The cache manager process runs periodically and prunes entries from the ddisk caches to keep them within the configured sizes
+        - The worker processes do all of the work. They handle network connections, read and write content to disk and communicate with upstream servers
+        - When in auto configured worker_processes, one worker process is run per CPU core, and never leaves the CPU core due to expensive context switching process
+        - When NGINX server is active, only the worker processes are busy. Each woker process handles multiple connections in a nonblocking fashion, reducing the number of context switches
+        - Each worker process is single threaded and runs independently, grabbing new connections and processing them. Processes communicate using shared memory for shared cache data, session persistence data and other shared resources
