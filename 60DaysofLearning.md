@@ -995,3 +995,19 @@
         - When in auto configured worker_processes, one worker process is run per CPU core, and never leaves the CPU core due to expensive context switching process
         - When NGINX server is active, only the worker processes are busy. Each woker process handles multiple connections in a nonblocking fashion, reducing the number of context switches
         - Each worker process is single threaded and runs independently, grabbing new connections and processing them. Processes communicate using shared memory for shared cache data, session persistence data and other shared resources
+    - How NGINX worker processes works?
+
+### Day44
+
+- Sharding
+    - Sharding distributes data across different databases such that each database can only manage a subset of the data
+    - Taking a users database as an example, Users from names starting with A-C are stored in one, D-E in one and similarly, as the number of users increases, more shards are added to the cluster
+    - If one shard goes down, the other shards are still operational, although you'll want to add some form of replication to avoid data loss
+    - There is no single central master serializing writes, allowing you to write in parallel with increased throughput
+    - Common ways to shard a table of users is either through the user's last name initial or the user's geographic location
+    - Disadvantage
+        - You'll need to update your application logic to work with shards, which could result in complex SQL queries
+        - Joining data from multiple shards is more complex
+        - Sharding adds more hardware and additional complexity
+        - Data distribution can become lopsided in a shard. For example, a set of power users on a shard could result in increased load to that shard compared to others
+        - Rebalancing adds additional complexity. A sharding function based on consistent hashing can reduce the amount of transferred data
