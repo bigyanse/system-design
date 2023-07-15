@@ -1011,3 +1011,16 @@
         - Sharding adds more hardware and additional complexity
         - Data distribution can become lopsided in a shard. For example, a set of power users on a shard could result in increased load to that shard compared to others
         - Rebalancing adds additional complexity. A sharding function based on consistent hashing can reduce the amount of transferred data
+
+### Day45
+
+- Federation
+    - Federation (or functional partitioning) splits up databases by function
+    - For eg: we can have three different databases instead of single database for forums, users, and products, resulting in less traffic and less read and write to each database and therefore less replication lag
+    - Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality
+    - With no single central master serializing writes we can write in parallel, increasing throughput
+    - Disadvantage
+        - Not effective if schema requires huge functions or tables
+        - Need to update application logic to determine which databases to read and write
+        - Joining data from two databases is more complex with a [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers)
+        - Federation adds more hardware and additional complexity
