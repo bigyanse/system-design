@@ -1024,3 +1024,16 @@
         - Need to update application logic to determine which databases to read and write
         - Joining data from two databases is more complex with a [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers)
         - Federation adds more hardware and additional complexity
+
+### Day46
+
+- Denormalization
+    - Improves read performance at the expense of write performance
+    - Redundant copies of data are written in multiple tables to avoid expensive joins
+    - Some RBDMS(PostgreSQL and Oracle) support materialized views which handle the work of storing redundant information and keeping redundant copies consistent
+    - Once data becomes distributed with techniques such as federation and sharding, managing joins across data centers further increases complexity. Denormalization might circumvent the need for such complex joins
+    - In most systems, reads can heavily outnumber writes 100:1 or even 1000:1. A read resulting in a complex database join can be very expensive, spending a significant amount of time on disk operations
+    - Disadvantages
+        - Data duplication
+        - Constraints can help redundant copies of information stay in sync but add complexity of database design
+        - A denormalized database under heavy write performs worse than its normalized counterpart
