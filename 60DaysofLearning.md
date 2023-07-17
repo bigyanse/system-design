@@ -1037,3 +1037,29 @@
         - Data duplication
         - Constraints can help redundant copies of information stay in sync but add complexity of database design
         - A denormalized database under heavy write performs worse than its normalized counterpart
+
+### Day47
+
+- SQL Tuning
+    - Process of improving SQL queries to accelerate your servers performance
+    - Important to benchmark and profile to stimulate and uncover bottlenecks
+        - Benchmark - Simulate high-load situations with tools like `ab`
+        - Profile - Enable tools such as the slow query log to help track performance Issues
+    - Benchmarking and profiling will often lead to following optimizations
+        - Tightening up the schema
+            - Using CHAR instead of VARCHAR for fixed length fields
+            - TEXT for large blocks of text
+            - INT for larger numbers
+            - DECIMAL for currency to avoid floating point representation errors
+            - Avoid storing large BLOBS, instead store location to get that object
+            - VARCHAR(255) maximizes the use of byte in RDBMS
+            - Set NOT NULL where applicable to improve search performance
+        - Using good indices
+            - SELECT, GROUP BY, ORDER BY, JOIN can be faster with indices
+            - Represented as self-balancing B-tree
+        - Avoiding expensive joins
+            - Denormalizing when performance demands it
+        - Partition tables
+            - Breaking up the table by putting hot spots in a separate table to help keep it in memory
+        - Tune the query cache
+            - Query cache could lead to performance issues in some cases
