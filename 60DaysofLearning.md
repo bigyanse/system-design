@@ -1063,3 +1063,26 @@
             - Breaking up the table by putting hot spots in a separate table to help keep it in memory
         - Tune the query cache
             - Query cache could lead to performance issues in some cases
+
+### Day48
+
+- Master-slave replication
+    - Way to scale a relational database along with federation, sharding, denormalization and SQL tuning
+    - Master serves reads and writes, replication writes to ono or more slaves, which only serve reads
+    - Slaves can also replicate to additional slaves in a tree-like fashion
+    - If master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned
+    - Disadvantage
+        - Additional logic is needed to promote a slave to a master which increases complexity
+- Master-master replication
+    - Both masters serves read and writes and coordinate with each other on writes
+    - If either master goes down, the system can continue to operate with both reads and writes
+    - Disadvantage
+        - Need a load balancer or need to make changes in application logic to determine where to write
+        - Most master-master systems are either loosely consistent(violating ACID) or have increased write latency due to sychronization
+        - Conflict resolution comes more into play as more write nodes are added and as latency increases
+- Disadvantages of replication(Both master-slave and master-master)
+    - Potential for data loss if master fails before any new written data can be replicated to other nodes
+    - Writes are replayed to the read replicas. If there are lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads
+    - The more read slaves, the more you have to replicate, which leads to greater replication lag
+    - On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentilally with a single thread
+    - Replication adds more hardware and additional complexity
