@@ -1086,3 +1086,22 @@
     - The more read slaves, the more you have to replicate, which leads to greater replication lag
     - On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentilally with a single thread
     - Replication adds more hardware and additional complexity
+
+### Day49
+
+- Different types of caching
+    - Client caching
+    - CDN caching: Content Delivery Network
+    - Web server caching
+        - Reverse proxies and caches such as Varnish can server static and dynamic content directly
+        - Web servers can also cache requests, returning responses without having to contact application servers
+    - Database caching
+        - Database usually includes some level of caching in a default configuration, optimized for a generic use case
+        - Tweaking these settings for specific usage patterns can further boost performance
+    - Application Caching
+        - In-memory caches such as Memcached and Redis are key-value stores between the application and data storage
+        - Since data is held in RAM, it is much faster than typical databases where data is stored on a disk
+        - RAM is more limited than disk, so cache invalidation algorithms such as LRU(Least Recently Used) can invalidate 'cold' entries and keep 'hot' data in RAM
+        - Redis has following additional features
+            - Persistence option
+            - Built-in data structures such as sorted sets and lists
