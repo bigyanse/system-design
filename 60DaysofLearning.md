@@ -1105,3 +1105,38 @@
         - Redis has following additional features
             - Persistence option
             - Built-in data structures such as sorted sets and lists
+
+### Day50
+
+- Multiple levels caching generally falls into:
+     - database queries and objects
+     - Row level
+     - Query level
+     - Fully-formed serializable objects
+     - Fully-rendered HTML
+     - We should try to avoid file-based caching, as it makes cloning, and auto-scaling more difficult
+- Caching at the object level
+    - Treating data as an object, similar to what we do with your application code, having application assemble the dataset from the database into a class instance or a data structure
+    - Remove the object from cache if its underlying data has changed
+    - Allows for asynchronous processing workers assemble objects by consuming the latest cached object
+- What to cache?
+    - User sessions
+    - Fully rendered web pages
+    - Activity streams
+    - User graph data:w
+- What to cache?
+    - Since we can only store a limited amount of data in cache, we need
+    to determine which cache update strategy works best for our user case
+- Cache-aside
+    - The application is reponsible for reading and writing from storage The cache does not interact with storage drectly. The application does the following:
+        - Look for entry in cache, resulting in a cache miss
+        - Load entry from the database
+        - Add entry to cache
+        - Return entry
+    - Memcached is generally used in this manner
+    - Subsequent reads of data added to cache are fast. Cache-aside is also referred to as lazy loading. Only requested data is cached, which avoids filling up the cache with data that isn't requested.
+    - Disadvantage: Cache-aside
+        - Each cache miss results in three trips, which cause a noticeable delay
+        - Data can become stale if it is updated in the database. This issue is mitigated by setting a time-to-live(TTL) which forces and update of the cache entry, or by using write-through.
+        - When a node fails, it is replaced by a new, empty node, increasing latency.
+
