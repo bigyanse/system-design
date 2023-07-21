@@ -1124,9 +1124,12 @@
     - Fully rendered web pages
     - Activity streams
     - User graph data:w
-- What to cache?
+- How to cache?
     - Since we can only store a limited amount of data in cache, we need
     to determine which cache update strategy works best for our user case
+
+### Day51
+
 - Cache-aside
     - The application is reponsible for reading and writing from storage The cache does not interact with storage drectly. The application does the following:
         - Look for entry in cache, resulting in a cache miss
@@ -1139,4 +1142,30 @@
         - Each cache miss results in three trips, which cause a noticeable delay
         - Data can become stale if it is updated in the database. This issue is mitigated by setting a time-to-live(TTL) which forces and update of the cache entry, or by using write-through.
         - When a node fails, it is replaced by a new, empty node, increasing latency.
-
+- Write-through
+    - Application uses cache as the main data store and cache is responsible for reading and writing to the the database
+    - Working
+        - Application adds/updates entry in the cache
+        - Cache synchronously writes entry to the data store
+        - Return
+    - Slow due to write operation, but subsequent reads of just written data are fast
+    - Users are general more tolerant of latency when updating data than reading data. Data in the cache is not stale.
+    - Disadvantages
+        - When a new node is created due to failure or sacling, the new node will not cache entries until the entry is updated in the database. Cache-aside in conjunction with write through can mitigate this issue
+        - Most data written might never be read, which can be minimized with a TTL
+- Write-behind(write-back)
+    - Working
+        - Add/update entry in the cache
+        - Asynchronously write entry to the data store, improving write performance
+    - Disadvantage
+        - There could be data loss if the cache goes down prior to its contents hitting the data store
+        - It is more complex to implement write-behind than it is to implement cache-aside or write-through
+- Refresh-ahead
+    - Configuring the cache to automatically refresh any recently accessed cache entry prior to its expiration
+    - Can result in reduced latency vs read-through if the cache can accurately predict which items are likely to be needed in the future
+    - Disadvantages
+        - Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead
+- Disadvantages of caches
+    - Need to maintain consistency between caches and the source of truth such as the database through cache invalidation
+    - Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache
+    - Need to make application changes such as adding Redis or Memcached
