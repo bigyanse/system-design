@@ -1169,3 +1169,29 @@
     - Need to maintain consistency between caches and the source of truth such as the database through cache invalidation
     - Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache
     - Need to make application changes such as adding Redis or Memcached
+
+### Day52
+
+- Domain Name System(DNS)
+    - DNS translates a domain name (google.com) to an IP address (74.125. 239.35)
+    - Heirarchial, with a few authoratative servers at the top level
+    - Router or ISP provides about which DNS server to contact when doing a lookup
+    - Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays
+    - DNS results can also be cached by the browser or OS for a certain period of time,d determined by the TTL(Time To Live)
+    - Terms
+        - NS record(Name Server): Specifies the DNS servers for the domain/subdomain
+        - MX record(Mail Exchange): Specifies the mail servers for accepting messages
+        - A record(address): Points a name to an IP address
+        - CNAME(Canonical): Points a name to another name or CNAME(google.com to www.google.com) or to an A record
+    - Services such as CloudFlare and Route 53 provide managed DNS services
+    - DNS service route traffic by methods like:
+        - Weighted Round Robin
+            - Prevent traffic from going to servers under maintenance
+            - Balance between varying cluster sizes
+            - A/B testing
+        - Latency-based
+        - Geolocation based
+    - Disadvantages:
+        - Accessing a DNS server introduces a slight delay, although mitigated by caching
+        - DNS server management could be complex and is generally managed by governments, ISPs, and large companies
+        - DNS services have recenlty come under DDoS attack, preventing users from accessing websites such as Twitter without knowing Twitter's IP addresses
