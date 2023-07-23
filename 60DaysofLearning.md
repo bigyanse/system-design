@@ -1195,3 +1195,21 @@
         - Accessing a DNS server introduces a slight delay, although mitigated by caching
         - DNS server management could be complex and is generally managed by governments, ISPs, and large companies
         - DNS services have recenlty come under DDoS attack, preventing users from accessing websites such as Twitter without knowing Twitter's IP addresses
+
+### Day53
+
+- Communication
+    - Transmission Control Protocol(TCP)
+        - Connection-oriented protocol over an IP network
+        - Connection is established and terminated using a handshake
+        - All packets sent are guaranteed to reach the destination in the original order and without corruption through
+            - sequence numbers and checksum table for each packet
+            - acknowledgement packets and automatic retransmission
+        - If the sender does not receive a correct response, it will rensend the packets
+        - If there are multiple timeouts, the connection is dropped
+        - TCP also implements flow control and congestion control which guarantees cause delays and generally result in less efficient transmission than UDP
+        - To ensure high throughput, web servers can keep a large number of TCP connections again, resulting in high memory usage
+        - It can be expensive to have a large number of open connections between web server threads and say, a memcached server
+        - Connection pooling can help in addition to switcing to UDP where applicable
+        - Useful for applications that require high reliability but less time critical. Eg: web servers, database info, SMTP, FTP, SSH
+        - Need TCP over UDP when: need data to arrive intact sequentially and want to make best estimate use of the network throughput
