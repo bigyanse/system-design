@@ -1213,3 +1213,19 @@
         - Connection pooling can help in addition to switcing to UDP where applicable
         - Useful for applications that require high reliability but less time critical. Eg: web servers, database info, SMTP, FTP, SSH
         - Need TCP over UDP when: need data to arrive intact sequentially and want to make best estimate use of the network throughput
+
+### Day54
+
+- User Datagram Protocol(UDP)
+    - Connectionless
+    - Datagrams(like packets) are guaranteed only at the datagram level
+    - Might reach their destination out of order or not at all
+    - Does not support congestion control
+    - Without the guarantees that TCP support, UDP is generally more efficient
+    - Can broadcast, sending datagrams to all devices on the subnet
+    - Useful with DHCP because the client has not yet received an IP address, thus preventing a way for TCP to stream without the IP address
+    - Less reliable but works well in real time use cases such as VoIP, chat, streamming, and realtime multiplayer games
+    - Use UDP over TCP when
+        - need lowest latency
+        - late data is worse than loss of data
+        - want to implement own error correction
