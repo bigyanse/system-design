@@ -1229,3 +1229,33 @@
         - need lowest latency
         - late data is worse than loss of data
         - want to implement own error correction
+
+### Day55
+
+- Remote Procedure Call(RPC)
+    - Request-Response protocol
+    - Client causes a procedure to execute on a different address space ( a remote server)
+    - Procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program
+    - Usually slower and less reliable thatn local calls so it is helpful to distinguish RPC calls from local calls
+    - Frameworks: Protobuf, Thrift, Avro
+    - Terms
+        - Client program: Calls the client stub program, parameters are pushed onto the stack like a local procedure call
+        - Client stub procedure: marshals(packs) procedure id and arguments into a request message
+        - Client communication module: OS sends the message from the client to the server
+        - Server communication module: OS passes the incoming packets to the server stub program
+        - Server stub procedure: Unmarshalls the results, calls the server procedure matching the procedure id and passes the given arguments
+        - Server response repeats the steps above in reverse order
+    - Focused on exposing behaviors
+    - Used for performance reasons with internal communications as you can hand-craft native calls to better fit required use-cases
+    - Choosing a native library when
+        - Know target platform
+        - Control how logic is accessed
+        - Control how error control happens off the library
+        - Performance and end user experience is the primary concern
+    - HTTP APIs following tend to be used more often for public APIs
+    - Disadvantages:
+        - Becomes tightly coupled to the service implementation
+        - New API must be defined for every new operation or use case
+        - Difficult to debug RPC
+        - Might not be able to leverage existing technologies out of the box. For eg: it might require additional effort to ensure RPC calls are properly cached on caching servers such as Squid
+
