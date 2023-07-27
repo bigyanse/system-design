@@ -1278,3 +1278,27 @@
     - Requires different approach from an architectural, operations, and process viewpoint(vs a monolithic system)
     - Adds complexity in terms of deployments and operations
     
+### Day57
+
+- Case Study: File/Data sharing/syncing service(Dropbox)
+    - Scale:
+        - 10s of million of users
+        - 100s of millions of file syncs per day
+    - Challenges:
+        - High read and write volume(Read to write ratio: 1:1)
+        - ACID requirements
+    - High-level architecture
+        - First: only server and clients which quickly ran out of disk space and server became overloaded
+        - Second: added AWS S3 and AWS DB as separate components but server was constantly pinged for uploading and downloading and added metaservver and blockserver and notification service server
+        - Third: Added memcache for avoiding database scaling and load balancer
+        - Same architecture but more complex, fixing load balancers, memcache consistencies and availability, python global interpreter lock, etc
+    - Server File Journal
+        - Database schema: id, filename, casepath, latest, ns_id(namespacce id)
+        - Added prev_rev, previous entry of the file
+        - Added primary key for ns_id and latest
+        - Removed latest as primary key
+    - Time
+        - Working with things that matter to manage time effectively and really work on things that really matter
+        - Adding things slowly to build things better
+            - Batch processing infrastructure
+            - Moving Server File Journal to SSD
