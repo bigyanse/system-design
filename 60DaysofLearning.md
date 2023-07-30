@@ -1302,3 +1302,21 @@
         - Adding things slowly to build things better
             - Batch processing infrastructure
             - Moving Server File Journal to SSD
+
+### Day58
+
+- Omission Failure
+    - Design error that falls under the designing failures category
+    - The possibility of overlooking or omitting an essential requirement or feature never goes away even with the best planning and execution, which can result in omission failure
+    - This could occur when designers overlook some needs or eventualities that the system may need to manage, particularly in safety-critical systems used in aviation, healthcare, and other industries, it may have detrimental effects
+    - Eg: medical gadget without a safety feature, aircraft control system with a missing crucial component
+    - Reasons for omission failure
+        - Lack of resources or time
+        - Miscommunication between stakeholders, and the development team
+    - Preventive measures for omission failure
+        - Conducting comrehensive requirements analysis
+        - Involve a diverse group of stakeholders in the design process
+        - Use design patterns and best practices
+        - Conduct end to end testing and take user feedback
+    - Eg: web-based shopping platform that does not have filtering functionality in search results by price range
+
