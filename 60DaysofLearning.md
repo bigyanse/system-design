@@ -1341,3 +1341,31 @@
         - Additional developmental work to deploy CQRS
         - Need to synchronize data between the command and query models
 
+### Day60
+
+- Google File System (GFS)
+    - Distributed file system developed by Google to manage large-scale data across multiple servers
+    - Designed for high reliability, availability, and scalability
+    - Utilizes a master-slave architecture with a single master node and multiple chunk servers
+    - Stores data in fixed-size chunks (typically 64 MB) across multiple servers for fault tolerance
+    - Implements a unique three-replica approach to ensure data redundancy and durability
+    - Optimized for sequential read/write operations and handling large files efficiently
+    - Used internally by Google for various applications, including Google Search and other services
+    - Inspired the development of other distributed file systems like Hadoop Distributed File System (HDFS)
+    - Pros
+        - Scalability
+        - Fault Tolerance
+        - High Performance
+        - Simplified Management
+        - Consistency and Atomicity
+    - Cons
+        - Not Suitable for All Workloads
+        - Single Point of Failure
+        - Latency for Small Files
+        - Complex Implementation
+    - Why to use GFS?
+        - Big Data Processing
+        - High Data Availability
+        - Scalability
+        - Simplified Management
+        - Reliability
