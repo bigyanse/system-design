@@ -1320,3 +1320,24 @@
         - Conduct end to end testing and take user feedback
     - Eg: web-based shopping platform that does not have filtering functionality in search results by price range
 
+### Day59
+
+- Command Query Responsibility Segregation(CQRS)
+    - Type of design pattern that separates the responsibility of handling commands and queries into different components
+    - mainly focuses to separate out the way of reading and writing the data
+    - It separates the read and update operations on a datastore into two separate models: Queries and Commands, respectively
+    - Architecture of CQRS pattern
+        - Commands are instructions that indicate a desired change in the state of an entity
+        - CommandHandlers interpret these commands and return an event
+        - Queries are used to retrieve information from a database
+    - CQRS is employed in situations when using a single database and model to handle both reads and writes is inefficient
+    - E-commerce websites, financial systems, and real-time analytics are examples of applications that require great scalability, performance, and data complexity
+    - Benefits
+        - Improved scalability
+        - Improved performance
+        - Improved maintainability
+    - Challenges
+        - Seperate models for commands and queries complicate the system
+        - Additional developmental work to deploy CQRS
+        - Need to synchronize data between the command and query models
+
