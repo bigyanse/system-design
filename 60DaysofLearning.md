@@ -1369,3 +1369,34 @@
         - Scalability
         - Simplified Management
         - Reliability
+
+### Day61
+
+- Hadoop File System(HFS)
+    - Distributed file system used in the Apache Hadoop ecosystem
+    - Designed to store and manage large datasets across a cluster of commodity hardware
+    - Inspired by the Google File System (GFS) and shares some design principles with it
+    - Utilizes a master-slave architecture with a single NameNode (master) and multiple DataNodes (slaves)
+    - Stores data in blocks (typically 128 MB or 256 MB) distributed across DataNodes for fault tolerance and parallel processing
+    - Provides high fault tolerance and data redundancy through block replication
+    - Optimized for handling big data workloads and parallel data processing using Hadoop MapReduce and other distributed computing frameworks
+    - Well-suited for batch processing, data analytics, and other data-intensive applications
+    - Offers a Java-based API for accessing and manipulating data stored in the Hadoop File System
+    - Pros
+        - Scalability
+        - Fault Tolerance
+        - Cost-Effectiveness
+        - Parallel Processing
+        - Distributed Computing
+    - Cons
+        - High Latency for Small Files
+        - Single Point of Failure
+        - Complexity
+        - Limited Real-Time Performance
+    - Why to use HFS?
+        - Big Data Storage and Processing
+        - Fault Tolerance and Data Redundancy
+        - Scalability
+        - Cost-Effectiveness
+        - Distributed Parallel Processing
+        - Hadoop Ecosystem Integration
