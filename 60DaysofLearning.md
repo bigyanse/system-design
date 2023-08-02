@@ -737,7 +737,7 @@
     - All node acts as a seeder and a leecher at the same time, so even if some of the nodes go down, the network and the communication is still up
     - A seeder is a node which hosts the data on its system and provides bandwidth to upload the data to the network, a leecher is a node which downloads the data from the network
 - Downsides of Centralized Systems 
-    - Central server has access to all of the information of the users, so communication and security issues is prevalent, data may be breached, sold, or data may get lost due to disasters, or the server plans to go down along with all your hardships on the platform for creating that data(assume facebook page with following of 1M+)
+    - Central server has access to all of the information of the users, so communication and security issues is prevalent, data may be breached, sold, or data may get lost due to disasters, or the server plans to go down along with all our hardships on the platform for creating that data(assume facebook page with following of 1M+)
 - Decentralized Architecture
     - P2P network is based on decentralized architecture, in which nobody has control over a user's data, nobody can delete the data, everyone has equal rights
     - Even during disasters, P2P is useful in case all the infrastructure goes down
@@ -880,7 +880,7 @@
         - Mobile Friendly: with major users being in desktop
     - Do we need mobile app?
         - Focus on what type of sevice is to be provided, maybe it needs mobile rather than opening web everytime for completing it
-        - Do users use you service through mobile more? Study other similar business analytics
+        - Do users use our service through mobile more? Study other similar business analytics
 - Responsive Interface
     - Since there are different devices with different screen sizes like android, ios, desktop, TVs, etc, we need responsive interface to run across all devices which would lower development cost
 - Types of Mobile Apps
@@ -899,7 +899,7 @@
         - Flutter
 - Choosing between native and hybrid apps
     - If performance is needed go native else cross-platform hybrid should be fine
-    - Or if you don't have specific needs to go native go cross-platform
+    - Or if we don't have specific needs to go native go cross-platform
     - Other factors like cost, time, also comes into play if these constraints then go cross-platform
 - Progressive Web Apps(PWAs)
     - App like experience with a web application
@@ -978,7 +978,7 @@
 ### Day43
 
 - Reverse Proxy vs Load Balancer
-    - Load Balancer is useful when you have multiple servers, load balancers route traffic to a set of servers serving the same function
+    - Load Balancer is useful when we have multiple servers, load balancers route traffic to a set of servers serving the same function
     - Reverse proxy is useful even with just one web server or application server
 - NGINX Architecture
     - NGINX Process Model
@@ -1002,11 +1002,11 @@
 - Sharding
     - Sharding distributes data across different databases such that each database can only manage a subset of the data
     - Taking a users database as an example, Users from names starting with A-C are stored in one, D-E in one and similarly, as the number of users increases, more shards are added to the cluster
-    - If one shard goes down, the other shards are still operational, although you'll want to add some form of replication to avoid data loss
-    - There is no single central master serializing writes, allowing you to write in parallel with increased throughput
+    - If one shard goes down, the other shards are still operational, although we'll want to add some form of replication to avoid data loss
+    - There is no single central master serializing writes, allowing us to write in parallel with increased throughput
     - Common ways to shard a table of users is either through the user's last name initial or the user's geographic location
     - Disadvantage
-        - You'll need to update your application logic to work with shards, which could result in complex SQL queries
+        - You'll need to update our application logic to work with shards, which could result in complex SQL queries
         - Joining data from multiple shards is more complex
         - Sharding adds more hardware and additional complexity
         - Data distribution can become lopsided in a shard. For example, a set of power users on a shard could result in increased load to that shard compared to others
@@ -1041,7 +1041,7 @@
 ### Day47
 
 - SQL Tuning
-    - Process of improving SQL queries to accelerate your servers performance
+    - Process of improving SQL queries to accelerate our servers performance
     - Important to benchmark and profile to stimulate and uncover bottlenecks
         - Benchmark - Simulate high-load situations with tools like `ab`
         - Profile - Enable tools such as the slow query log to help track performance Issues
@@ -1083,7 +1083,7 @@
 - Disadvantages of replication(Both master-slave and master-master)
     - Potential for data loss if master fails before any new written data can be replicated to other nodes
     - Writes are replayed to the read replicas. If there are lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads
-    - The more read slaves, the more you have to replicate, which leads to greater replication lag
+    - The more read slaves, the more we have to replicate, which leads to greater replication lag
     - On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentilally with a single thread
     - Replication adds more hardware and additional complexity
 
@@ -1116,7 +1116,7 @@
      - Fully-rendered HTML
      - We should try to avoid file-based caching, as it makes cloning, and auto-scaling more difficult
 - Caching at the object level
-    - Treating data as an object, similar to what we do with your application code, having application assemble the dataset from the database into a class instance or a data structure
+    - Treating data as an object, similar to what we do with our application code, having application assemble the dataset from the database into a class instance or a data structure
     - Remove the object from cache if its underlying data has changed
     - Allows for asynchronous processing workers assemble objects by consuming the latest cached object
 - What to cache?
@@ -1246,7 +1246,7 @@
         - Server stub procedure: Unmarshalls the results, calls the server procedure matching the procedure id and passes the given arguments
         - Server response repeats the steps above in reverse order
     - Focused on exposing behaviors
-    - Used for performance reasons with internal communications as you can hand-craft native calls to better fit required use-cases
+    - Used for performance reasons with internal communications as we can hand-craft native calls to better fit required use-cases
     - Choosing a native library when
         - Know target platform
         - Control how logic is accessed
@@ -1400,3 +1400,65 @@
         - Cost-Effectiveness
         - Distributed Parallel Processing
         - Hadoop Ecosystem Integration
+
+### Day62
+
+- Modes of Failure
+    - Crash Failure
+        - Operating system failures
+        - System is halt when failure
+    - Timing Failure
+        - Long response time and thus failed server operations
+    - Omission Failure
+        - Lack of reply or response from the server
+        - Missing functionality
+    - Byzantine Failure
+        - Also known as Arbitrary Failure
+        - Server responds in arbitrary passion at arbitrary times
+
+### Day63
+
+- Back-of-the-envelope Calculations For Best Design
+    - To evaluate design alternatives we first need a good sense of how long typical operations will take:
+        - L1 cache reference 0.5 ns
+        - Branch mispredict 5 ns
+        - L2 cache reference 7 ns
+        - Mutex lock/unlock 100 ns
+        - Main memory reference 100 ns
+        - Compress 1K bytes with Zippy 10,000 ns
+        - Send 2K bytes over 1 Gbps network 20,000 ns
+        - Read 1 MB sequentially from memory 250,000 ns
+        - Round trip within same datacenter 500,000 ns
+        - Disk seek 10,000,000 ns
+        - Read 1 MB sequentially from network 10,000,000 ns
+        - Read 1 MB sequentially from disk 30,000,000 ns
+        - Send packet CA->Netherlands->CA 150,000,000 ns 
+    - Some things to notice
+        - Notice the magnitude differences in the performance of different options
+        - Datacenters are far away so it takes a long time to send anything between them
+        - Memory is fast and disks are slow
+        - By using a cheap compression algorithm a lot (by a factor of 2) of network bandwidth can be saved
+        - Writes are 40 times more expensive than reads
+        - Global shared data is expensive. This is a fundamental limitation of distributed systems. The lock contention in shared heavily written objects kills performance as transactions become serialized and slow
+        - Architect for scaling writes
+        - Optimize for low write contention
+        - Optimize wide. Make writes as parallel as we can
+    - Example: Generate Image Results Page of 30 Thumbnails
+        - Design 1 - Serial
+            - Read images serially. Perform disk seek. Read a 256K image and go on to next image
+            - Performance: 30 seeks * 10ms/seek + 30 * 256K / 30MB/s = 560ms
+        - Design 2 - Parallel
+            - Issue reads in parallel
+            - Performance: 10ms/seek + 256K read / 30MB/s = 18ms
+            - There will be variance from the disk reads, so the more likely time is 30-60ms
+    - Which design is best? It depends on the requirements, but given the back-of-the-envelope calculations we have a quick way to compare them without building them
+    - Now we can ask other design questions like:
+        - Does it make sense to cache single thumbnail images?
+        - Should we cache a whole set of images in one entry?
+        - Does it make sense to precompute the thumbnails?
+    - To make these estimates realistic we'll have to know the performance of the services. To know if caching is a good design alternative, for example, we'll have to know how long it takes to write into our cache.
+    - Things to Remember
+        - Back-of-the-envelope calculations allows to take a look at different variations.
+        - When designing a system, these are the kind of calculations we should be doing over and over in our head.
+        - Know the back of the envelope numbers for the building blocks of the system. It's not good enough to just know the generic performance numbers, we have to know how the subsystems perform. We can't make decent back-of-the-envelope calculations if we don't know what's going on.
+        - Monitor and measure every part of we system so we can make these sorts of projections from real data.
