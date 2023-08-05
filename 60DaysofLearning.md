@@ -1428,14 +1428,14 @@
         - Compress 1K bytes with Zippy 10,000 ns
         - Send 2K bytes over 1 Gbps network 20,000 ns
         - Read 1 MB sequentially from memory 250,000 ns
-        - Round trip within same datacenter 500,000 ns
+        - Round trip within same data-center 500,000 ns
         - Disk seek 10,000,000 ns
         - Read 1 MB sequentially from network 10,000,000 ns
         - Read 1 MB sequentially from disk 30,000,000 ns
         - Send packet CA->Netherlands->CA 150,000,000 ns 
     - Some things to notice
         - Notice the magnitude differences in the performance of different options
-        - Datacenters are far away so it takes a long time to send anything between them
+        - Data-centers are far away so it takes a long time to send anything between them
         - Memory is fast and disks are slow
         - By using a cheap compression algorithm a lot (by a factor of 2) of network bandwidth can be saved
         - Writes are 40 times more expensive than reads
@@ -1455,7 +1455,7 @@
     - Now we can ask other design questions like:
         - Does it make sense to cache single thumbnail images?
         - Should we cache a whole set of images in one entry?
-        - Does it make sense to precompute the thumbnails?
+        - Does it make sense to pre-compute the thumbnails?
     - To make these estimates realistic we'll have to know the performance of the services. To know if caching is a good design alternative, for example, we'll have to know how long it takes to write into our cache.
     - Things to Remember
         - Back-of-the-envelope calculations allows to take a look at different variations.
